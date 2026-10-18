@@ -1,0 +1,516 @@
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f4f4f4, #e8f1ff);
+    color: #222;
+    min-height: 100vh;
+
+    /* Page animation */
+    animation: pageLoad 0.8s ease;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav {
+    background: rgba(34, 34, 34, 0.95);
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 50px;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+
+    animation: navDown 0.7s ease;
+}
+
+nav h2 {
+    color: #00bfff;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+nav h2:hover {
+    color: #00ffff;
+    transform: scale(1.08);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+
+    margin-left: 25px;
+
+    position: relative;
+
+    transition: color 0.3s ease;
+}
+
+/* Animated underline */
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+
+    width: 0;
+    height: 2px;
+
+    background: #00bfff;
+
+    left: 0;
+    bottom: -6px;
+
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: #00bfff;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+    max-width: 850px;
+    min-height: 500px;
+
+    margin: 60px auto;
+    padding: 60px 40px;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    text-align: center;
+
+    border-radius: 20px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+
+    animation: slideUp 0.9s ease;
+
+    transition: 0.4s ease;
+}
+
+main:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+}
+
+main h1 {
+    margin-bottom: 20px;
+
+    font-size: 40px;
+
+    color: #222;
+
+    animation: fadeIn 1s ease;
+}
+
+main h1::first-letter {
+    color: #007bff;
+}
+
+main p {
+    margin-bottom: 25px;
+
+    color: #666;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    animation: fadeIn 1.2s ease;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+    padding: 13px 28px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: linear-gradient(
+        135deg,
+        #007bff,
+        #00bfff
+    );
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-4px) scale(1.03);
+
+    box-shadow:
+        0 10px 25px rgba(0, 123, 255, 0.35);
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+
+/* Button shine animation */
+
+button::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 60%;
+    height: 100%;
+
+    background: rgba(255, 255, 255, 0.25);
+
+    transform: skewX(-25deg);
+
+    transition: 0.6s;
+}
+
+button:hover::before {
+    left: 130%;
+}
+
+
+/* =========================
+   CONTACT FORM
+========================= */
+
+form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+
+    max-width: 500px;
+
+    margin: auto;
+
+    animation: slideUp 0.8s ease;
+}
+
+input,
+textarea {
+    width: 100%;
+
+    padding: 14px;
+
+    border: 2px solid #ddd;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    background: white;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #007bff;
+
+    box-shadow:
+        0 0 0 4px rgba(0, 123, 255, 0.12);
+
+    transform: translateY(-2px);
+}
+
+textarea {
+    height: 120px;
+
+    resize: vertical;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.cards {
+    display: flex;
+
+    gap: 25px;
+
+    margin-top: 35px;
+}
+
+.card {
+    flex: 1;
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    border: 1px solid #eee;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+
+    color: #007bff;
+}
+
+.card p {
+    color: #666;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.section {
+    max-width: 1000px;
+
+    margin: 50px auto;
+
+    padding: 50px 30px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.section h2 {
+    font-size: 32px;
+
+    margin-bottom: 20px;
+}
+
+.section p {
+    color: #666;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+    text-align: center;
+
+    padding: 70px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #007bff,
+            #00bfff
+        );
+
+    color: white;
+}
+
+.cta h2 {
+    font-size: 35px;
+
+    margin-bottom: 15px;
+}
+
+.cta p {
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #222;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px;
+
+    line-height: 1.8;
+}
+
+footer p {
+    opacity: 0.8;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes pageLoad {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes navDown {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes slideUp {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 700px) {
+
+    nav {
+        flex-direction: column;
+
+        gap: 15px;
+
+        padding: 20px;
+    }
+
+    nav a {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    main {
+        margin: 30px 15px;
+
+        padding: 40px 20px;
+    }
+
+    main h1 {
+        font-size: 30px;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+    .section {
+        margin: 30px 15px;
+    }
+
+}

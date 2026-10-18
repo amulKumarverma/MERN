@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "node colors-package.js",
+    "dev": "nodemon colors-package.js"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "nodemon": "^3.1.14"
+  }
+}

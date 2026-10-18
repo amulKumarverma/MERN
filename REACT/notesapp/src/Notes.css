@@ -1,0 +1,91 @@
+/* Notes.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f6f9;
+}
+
+.frm {
+  width: 90%;
+  max-width: 450px;
+  margin: 80px auto;
+  padding: 25px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.inp {
+  margin-bottom: 20px;
+}
+
+.inp input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.inp input:focus {
+  border-color: #007bff;
+}
+
+.subtn button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.subtn button:hover {
+  background: #0056b3;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .frm {
+    width: 92%;
+    padding: 20px;
+    margin-top: 60px;
+  }
+
+  .inp input,
+  .subtn button {
+    font-size: 15px;
+    padding: 11px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .frm {
+    width: 95%;
+    padding: 15px;
+    margin-top: 40px;
+    border-radius: 10px;
+  }
+
+  .inp input,
+  .subtn button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .subtn button {
+    margin-top: 5px;
+  }
+}

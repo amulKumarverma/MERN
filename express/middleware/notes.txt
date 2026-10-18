@@ -1,0 +1,44 @@
+Explanation
+- req — contains information about the incoming request.
+- res — is used to send a response to the client.
+- next() — passes control to the next middleware or route handler.
+- app.use() — registers middleware that runs for matching requests, depending on its position and any specified path.
+If you omit next() and don't send a response, the request may remain pending.
+3. Types of middleware in Express.js
+Type	Purpose	Example
+Application-level	Runs for requests handled by the application	app.use(...)
+Router-level	Runs for a specific router	router.use(...)
+Built-in	Provided by Express	express.static(...)
+Third-party	Added using external packages	cors, morgan
+Error-handling	Handles errors	(err, req, res, next) => {}
+
+
+4. Middleware you are already using
+In your website project, you have this code:
+app.use(express.static(absolutepath));
+app.use(express.static(stylepage));
+
+
+These are built-in static middleware functions.
+- express.static(absolutepath) serves files from your renderhtml folder.
+- express.static(stylepage) serves files from your external style folder, such as about.css, contact.css, and service.css.
+For example, when your HTML contains:
+<link rel="stylesheet" href="/about.css">
+
+
+Express static middleware looks for about.css in the configured static directory and serves it to the browser.
+5. Middleware order matters
+Express processes middleware in the order it is registered.
+app.use(express.static(stylepage));
+
+app.get("/about", (req, res) => {
+    res.sendFile(path.join(absolutepath, "about.html"));
+});
+
+app.use((req, res) => {
+    res.status(404).send("Page Not Found");
+});
+
+
+Here, static middleware comes first, routes come next, and the 404 middleware comes last. This allows static files and valid pages to be served before Express handles an unmatched request.
+Remember: Middleware is like a checkpoint for HTTP requests. It can inspect or modify requests, perform tasks, and decide whether to continue to the next step or send a response.

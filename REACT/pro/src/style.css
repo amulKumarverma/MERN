@@ -1,0 +1,196 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: #eef2f7;
+}
+
+/* Form */
+
+.parent{
+    width: 450px;
+    margin: 40px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.parent input,
+.parent textarea{
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    font-size: 16px;
+}
+
+.parent textarea{
+    resize: none;
+}
+
+.parent button{
+    width: 100%;
+    padding: 12px;
+    background: royalblue;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.parent button:hover{
+    background: #2347b5;
+}
+
+/* Notes Card */
+
+.dataparent{
+    width: 320px;
+    background: white;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 12px rgba(0,0,0,.15);
+}
+
+.title{
+    margin-bottom: 15px;
+}
+
+.title h2{
+    color: #333;
+}
+
+.titeldara{
+    margin-bottom: 20px;
+}
+
+.titeldara p{
+    color: #666;
+    line-height: 1.5;
+}
+
+.btn{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn button{
+    width: 120px;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+}
+
+.btn span:first-child button{
+    background: green;
+}
+
+.btn span:last-child button{
+    background: crimson;
+}
+
+.btn span:first-child button:hover{
+    background: darkgreen;
+}
+
+.btn span:last-child button:hover{
+    background: darkred;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f2f2f2;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+    padding:20px;
+}
+
+/* Form */
+.parent{
+    width:400px;
+    padding:20px;
+    background:#fff;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+.parent input,
+.parent textarea{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+}
+
+.parent button{
+    width:100%;
+    padding:10px;
+    background:royalblue;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+/* Cards */
+.dataparent{
+    width:300px;
+    padding:20px;
+    background:white;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+.title{
+    margin-bottom:10px;
+}
+
+.titeldara{
+    margin-bottom:15px;
+}
+
+.btn{
+    display:flex;
+    justify-content:space-between;
+}
+
+.btn button{
+    padding:8px 20px;
+}
+/* Responsive */
+
+@media (max-width:500px){
+
+    .parent{
+        width: 90%;
+    }
+
+    .dataparent{
+        width: 90%;
+    }
+
+    .btn{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn button{
+        width: 100%;
+    }
+}
