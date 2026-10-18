@@ -22,7 +22,14 @@ client.connect().then((connection)=>{
   })
 
 
-  app.get("/ui",async(req,resp)=>{
+  app.get("/",async(req,resp)=>{
+  const collection=db.collection('student')
+  const studentdata=await collection.find().toArray()
+resp.render("index",{studentdata})
+  })
+
+
+    app.get("/",async(req,resp)=>{
   const collection=db.collection('student')
   const studentdata=await collection.find().toArray()
 resp.render("index",{studentdata})
