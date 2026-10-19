@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Student</title>
+</head>
+<body>
+
+    <h1>Update Student</h1>
+
+    <form action="/ui/update/<%= studentdata._id %>" method="POST">
+
+        <label>Name:</label>
+        <input
+            type="text"
+            name="name"
+            value="<%= studentdata.name %>"
+            required
+        >
+
+        <br><br>
+
+        <label>Age:</label>
+        <input
+            type="number"
+            name="age"
+            value="<%= studentdata.age %>"
+            required
+        >
+
+        <br><br>
+
+        <label>Email:</label>
+        <input
+            type="email"
+            name="email"
+            value="<%= studentdata.email %>"
+            required
+        >
+
+        <br><br>
+
+        <button type="submit">Update Student</button>
+        <a href="/ui">Cancel</a>
+
+    </form>
+
+</body>
+</html>
