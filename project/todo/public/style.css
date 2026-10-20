@@ -1,0 +1,518 @@
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222831;
+    padding: 18px 40px;
+}
+
+/* Logo */
+.logo {
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+}
+
+/* Link Styling */
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 17px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+/* Hover Effect */
+.nav-links a:hover {
+    background-color: #00adb5;
+    color: #ffffff;
+}
+
+/* Responsive Navbar */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 15px;
+        padding: 8px;
+    }
+}
+
+
+
+/* Add Task Container */
+.task-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+.task-container h1 {
+    text-align: center;
+    color: #222831;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #777777;
+    margin-bottom: 30px;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333333;
+}
+
+/* Input, Textarea and Select */
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #00adb5;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Add Button */
+.add-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #00adb5;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-btn:hover {
+    background-color: #008c93;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .task-container {
+        margin: 25px 15px;
+        padding: 20px;
+    }
+}
+
+
+
+/* Task List */
+.list-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 25px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.list-container h1 {
+    text-align: center;
+    color: #222831;
+    margin-bottom: 10px;
+}
+
+.list-container .subtitle {
+    text-align: center;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+/* Table */
+.task-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 25px;
+}
+
+.task-table th,
+.task-table td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.task-table th {
+    background: #222831;
+    color: white;
+}
+
+.task-table tbody tr:hover {
+    background: #f5f5f5;
+}
+
+/* Priority */
+.priority {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+.priority.low {
+    background: #d4edda;
+    color: #155724;
+}
+
+.priority.medium {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.priority.high {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Action Buttons */
+.edit-btn,
+.delete-btn,
+.add-task-btn {
+    display: inline-block;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.edit-btn {
+    background: #007bff;
+}
+
+.delete-btn {
+    background: #dc3545;
+}
+
+.delete-form {
+    display: inline-block;
+}
+
+.add-task-btn {
+    background: #00adb5;
+    padding: 12px 18px;
+}
+
+.empty-message {
+    text-align: center !important;
+    padding: 30px !important;
+    color: #777;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .list-container {
+        margin: 20px 10px;
+        padding: 12px;
+        overflow-x: auto;
+    }
+
+    .task-table {
+        min-width: 750px;
+    }
+}
+
+
+/* Select All and Task Checkboxes */
+.task-table input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+    accent-color: #00adb5;
+    vertical-align: middle;
+}
+
+/* Delete Selected Button */
+form[action="/delete-selected"] > .delete-btn {
+    display: inline-block;
+    margin: 5px 0 20px;
+    padding: 12px 20px;
+    background-color: #dc3545;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form[action="/delete-selected"] > .delete-btn:hover {
+    background-color: #b02a37;
+}
+
+/* Edit Button Hover */
+.edit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Delete Button Hover */
+.delete-btn:hover {
+    background-color: #b02a37;
+}
+
+/* Better Spacing for Action Buttons */
+.task-table td .edit-btn {
+    margin-right: 5px;
+}
+
+.task-table td .delete-btn {
+    margin-top: 3px;
+}
+
+/* Responsive Table Checkbox */
+@media (max-width: 768px) {
+    .task-table input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* ============================= */
+/* Mobile Responsive Design */
+/* ============================= */
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Navbar Responsive */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 18px 12px;
+    }
+
+    .logo {
+        font-size: 23px;
+        text-align: center;
+    }
+
+    .nav-links {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .nav-links a {
+        display: block;
+        font-size: 14px;
+        padding: 9px 11px;
+    }
+}
+
+/* Add and Update Form Responsive */
+@media (max-width: 600px) {
+    .task-container {
+        width: auto;
+        max-width: 100%;
+        margin: 20px 12px;
+        padding: 20px 15px;
+        border-radius: 10px;
+    }
+
+    .task-container h1 {
+        font-size: 24px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 22px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        width: 100%;
+        max-width: 100%;
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .add-btn {
+        padding: 13px;
+        font-size: 16px;
+    }
+}
+
+/* Task List Responsive */
+@media (max-width: 768px) {
+    .list-container {
+        width: auto;
+        max-width: 100%;
+        margin: 18px 10px;
+        padding: 15px 12px;
+        overflow: visible;
+    }
+
+    .list-container h1 {
+        font-size: 25px;
+    }
+
+    /* Keep table readable with horizontal scrolling */
+    .list-container form[action="/delete-selected"] {
+        width: 100%;
+    }
+
+    .task-table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        border-collapse: collapse;
+    }
+
+    .task-table th,
+    .task-table td {
+        padding: 11px 10px;
+        font-size: 13px;
+    }
+
+    .task-table input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+        accent-color: #00adb5;
+    }
+
+    /* Action Buttons */
+    .edit-btn,
+    .delete-btn {
+        padding: 9px 11px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    .task-table td .edit-btn {
+        margin-right: 4px;
+    }
+
+    /* Multiple Delete Button */
+    form[action="/delete-selected"] > .delete-btn {
+        width: 100%;
+        margin: 5px 0 15px;
+        padding: 13px;
+        font-size: 15px;
+    }
+
+    /* Add Task Link */
+    .add-task-btn {
+        display: block;
+        width: 100%;
+        padding: 13px;
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .empty-message {
+        white-space: normal;
+        min-width: 200px;
+    }
+}
+
+/* Extra Small Mobile Screens */
+@media (max-width: 380px) {
+    .navbar {
+        padding: 15px 8px;
+    }
+
+    .nav-links {
+        gap: 5px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .task-container {
+        margin: 12px 8px;
+        padding: 16px 12px;
+    }
+
+    .list-container {
+        margin: 12px 6px;
+        padding: 12px 8px;
+    }
+
+    .list-container h1 {
+        font-size: 22px;
+    }
+}

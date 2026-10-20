@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List | TaskManager</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <%- include('nav') %>
+
+    <div class="list-container">
+        <h1>Task List</h1>
+        <p class="subtitle">Manage all your tasks in one place.</p>
+
+        <form action="/delete-selected" method="POST">
+
+        <table class="task-table">
+            <thead>
+                <tr>
+                    <th><input type="checkbox" id="selectAll"></th>
+                    <th>#</th>
+                    <th>Task Title</th>
+                    <th>Description</th>
+                    <th>Due Date</th>
+                    <th>Priority</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% if (tasks && tasks.length > 0) { %>
+                    <% tasks.forEach((task, index) => { %>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="ids" value="<%= task._id %>" class="task-checkbox">
+                            </td>
+                            <td><%= index + 1 %></td>
+                            <td><%= task.title %></td>
+                            <td><%= task.description %></td>
+                            <td><%= task.dueDate || '-' %></td>
+                            <td>
+                                <span class="priority <%= (task.priority || 'Low').toLowerCase() %>">
+                                    <%= task.priority || 'Low' %>
+                                </span>
+                            </td>
+                            <td>
+                                <a href="/update/<%= task._id %>" class="edit-btn">Edit</a>
+
+                                <form action="/delete/<%= task._id %>" method="POST" class="delete-form">
+                                    <button type="submit" class="delete-btn">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    <% }); %>
+                <% } else { %>
+                    <tr>
+                        <td colspan="7" class="empty-message">
+                            No tasks found. Add your first task!
+                        </td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+
+        <button type="submit" class="delete-btn">
+            Delete Selected
+        </button>
+
+        </form>
+
+        <a href="/" class="add-task-btn">+ Add New Task</a>
+    </div>
+
+    <script>
+        document.getElementById('selectAll').addEventListener('change', function () {
+            document.querySelectorAll('.task-checkbox').forEach(function (checkbox) {
+                checkbox.checked = document.getElementById('selectAll').checked;
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Task | TaskManager</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <%- include('nav') %>
+
+    <div class="task-container">
+        <h1>Update Task</h1>
+        <p class="subtitle">Update your task details.</p>
+
+        <form action="/update/<%= task._id %>" method="POST">
+
+            <div class="form-group">
+                <label for="title">Task Title</label>
+                <input
+                    type="text"
+                    id="title"
+                    name="title"
+                    value="<%= task.title %>"
+                    placeholder="Enter task title"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea
+                    id="description"
+                    name="description"
+                    rows="5"
+                    placeholder="Enter task description"
+                    required
+                ><%= task.description %></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="dueDate">Due Date</label>
+                <input
+                    type="date"
+                    id="dueDate"
+                    name="dueDate"
+                    value="<%= task.dueDate || '' %>"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="priority">Priority</label>
+                <select id="priority" name="priority" required>
+                    <option value="Low" <%= task.priority === 'Low' ? 'selected' : '' %>>Low</option>
+                    <option value="Medium" <%= task.priority === 'Medium' ? 'selected' : '' %>>Medium</option>
+                    <option value="High" <%= task.priority === 'High' ? 'selected' : '' %>>High</option>
+                </select>
+            </div>
+
+            <button type="submit" class="add-btn">
+                Update Task
+            </button>
+
+        </form>
+    </div>
+
+</body>
+</html>
